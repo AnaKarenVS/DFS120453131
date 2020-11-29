@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: medium;
+        }
+        table{
+            margin: auto;
+            width: 60%;
+            text-align: center;
+        }
+        th, td{
+            padding: 1rem;
+            vertical-align: middle;
+        }
+        
+        tr.cebra{
+            background-color: aquamarine;
+        }
+        tr:not(#encabezado):hover{
+            background-color: lightblue;
+            cursor: pointer;
+        }
+        th.column{
+            border-left: 2px solid lightcoral;
+            border-right: 2px solid #111111;
+        }
+    </style>
+</head>
+<body>
+    <h1>Ejemplo de uso de for con tablas</h1>
+    <table class="table table-light">
+        <tr id="encabezado">
+            <th></th>
+                <script>
+                    for (let i = 1; i <= 10; i++){
+                        document.write("<th class='fila'" +i + "</th>");
+                    }
+                </script>
+        </tr>
+        <script>
+            for (let i =1; i <= 10; i++){
+                if((i % 2)===0){
+                    document.write("<tr>");
+
+                }else{
+                    document.write("<tr class='cebra'>");
+                }
+                document.write("<th class='column'>" +i + "</th>");
+
+            
+            for(let j=1; j<=10; j++){
+                document.write("<td>"+ (i*j)+ "</td>");
+            }
+            document.write("</tr>");
+
+
+            
+        }
+        </script>
+    </table>
+</body>
+</html>
