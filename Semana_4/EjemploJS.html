@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript JQUERY</title>
+</head>
+<body>
+    
+</body>
+<script>
+    console.log("hola mundo");
+    let fecha = new Date();
+    console.log(fecha);
+   // document.write(fecha);
+    let dia = fecha.getDay();
+    //document.write("El dia de la semana es"+ dia);
+    let hrDia = fecha.getHours();
+    //document.write("La hora es"+ hrDia);
+    let min = fecha.getMinutes();
+   //document.write("Los minutos son"+ min);
+
+    let lunes = 1;
+    let martes = 2;
+    let domingo = 3;
+
+    let calificacion = Math.round(Math.random()*10);
+    console.log(calificacion);
+     if (calificacion >= 6){
+        console.log("El alumno aprobo");
+     } else {
+        console.log("El alumno no aprobo");
+     }
+     document.write("Hola, hoy es"+ dia + "a las" + hrDia +" ");
+     
+    if((hrDia => 9) && (hrDia <= 14)){
+        document.write("Estas en clase"+" ");
+    }
+
+     if(hrDia => 11 && hrDia <= 12){
+        document.write("Estas en descanso");
+     }
+
+     let hora = 60;
+     if(hrDia => 11 && hrDia < 12){
+         let faltanMin = hora - min;
+         console.log(hrDia);
+         console.log(min);
+         document.write(" "+"Faltan"+" " + faltanMin+" " + "para que se termine el descanso");
+
+     }
+
+
+</script>
+
+</html>
