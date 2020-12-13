@@ -13,80 +13,28 @@
         <input id="tarea" type="text"><br><br>
         <button id="editar">Editar</button>
         <button id="agregar">Agregar</button>
-        <button id="imprimir">Imprimir</button>
+        <button id="limpiar">Limpiar</button>
     </div>
+    <div>
+        <h3>Lista de tareas por hacer</h3>
+            <ul id="lista">
+                <li>Aprender a programar</li>
+            </ul>
+    </div>
+    <div>
+        <h3>Tareas realizadas</h3>
+            <ul id="lista-done">
+                <li></li>
+            </ul>
+    </div>
+
+    <div>
+        <h3>Suma input</h3>
+        <input id="numero" type="text">
+        <button id="suma">Sumar</button>
+
+    </div>
+
     <script src="Listas.js"></script>
-   
-    <script>
-        function saluda(hacer){
-            alert(hacer);
-        }
-        function saludaPersona(nombre){
-            alert('Hola,'+ " "+ nombre);
-        }
-
-        saludaPersona("Ana");
-        saluda("Haremos operaciones");
-        
-         let a = parseInt(window.prompt('Ingresa el primer valor para suma'));
-         let b = parseInt(window.prompt('Ingresa el segundo valor para la suma'));
-         let c;
-        function suma(a, b){
-            c = a + b;
-            console.log(c);
-
-        }
-        suma(a, b);
-        document.writeln('El resultado de la suma es:'+ " " + c);
-
-
-        alert("Ahora una resta");
-        let d  = window.prompt('Ingresa el primer valor de la resta');
-        let e = window.prompt('Ingresa el segundo valor de la resta');
-        let f;
-        function resta(d, e){
-            f = d - e;
-            console.log(f);
-
-        }
-        resta(d, e);
-        console.log(f);
-        document.writeln('El resultado de resta es:'+ f);
-        document.write("<br>");
-
-        alert("Ahora una multiplicacion");
-        let g = parseInt(window.prompt('Ingresa el primer valor de la multiplicacion'));
-        let h = parseInt(window.prompt('Ingresa el segundo valor de la multiplicacion'));
-        let i;
-        function resta(g, i){
-            i = g * i;
-        }
-        resta(g,i);
-        console.log(i);
-        document.write("<br>");
-        document.writeln('El resultado de la multiplicacion es: '+ i);
-        
-
-
-        alert("Ahora una división");
-        let j = parseInt(window.prompt('Ingresa el divisor'));
-        let k = parseInt(window.prompt('Ingresa el dividendo'));
-        let l;
-
-        if(j != 0 && k != 0){
-        function resta(j, k){
-            l = j / k;
-        }
-        resta(j,k);
-        console.log(l);
-        document.write("<br>");
-        document.writeln('El resultado de la division es: '+ l);
-
-        }else{
-            document.writeln('Esta operación no se puede realizar');
-        }
-        
-
-    </script>
 </body>
 </html>
