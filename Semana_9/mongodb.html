@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comandos para MONGODB</title>
+</head>
+<body>
+    <ul>
+        <li><b>use nombreBD </b>  // crear base de datos o cambiarte a una existente</li>
+        <li>db  //te dice en que bd estas </li>
+        <li> db.prueba20210117.alumnos.insert({nombre: "Ana", edad: 17}) // inserta datos en esa bd</li>
+        <li>db.createCollection("nombreColeccion")  // </li>
+        <li>show collections  // muestra todas las colecciones creadas</li>
+        <li>db.prueba20210117.alumnos.find()  // muestra los datos dentro de una collecion</li>
+        <li>db.prueba2.insertMany([{_id:2, nombre: "Lupita", edad: 7, intereses: ["cantar", "bailar", "explorar"]}, {_id:3, nombre: "julio", edad: "45", intereses: ["programar","correr", "yoga"]}]) //insertar multiples registros</li>
+        <li>db.prueba2.insertOne({_id:1, nombre: "Perez", edad: 77}) // inserta solo un registro</li>
+        <li>db.prueba2.find({edad: 7})  // busca las coincidencias como un select con where</li>
+        <li>db.dropDatabase() // borra la bd donde estas posicionado // </li>
+    </ul>
+</body>
+</html>
