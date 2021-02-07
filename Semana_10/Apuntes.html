@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+  <body>
+      <h1>db.prueba2.find({nombre: {$eq: "Lupita"}})</h1>
+      <h1>db.prueba2.find({edad: {$lt: 77}})  <p>Solo los valores menores</p></h1>
+      <h1>db.prueba2.find({edad: {$gt: 7}}) <p>Solo los valores mayores</p></h1>
+      <h1> db.prueba2.find({edad: {$lte: 77}}) <p>Los menores o iguales</p></h1>
+      <h1>db.prueba2.find({edad: {$gte: 7}}) <p>Mayores o iguales</p></h1>
+      <h1>db.prueba2.find({edad: {$not: {$gt: 3}}}) <p>Operador not</p></h1>
+      <h1> db.prueba2.find({$or: [{edad: {$gte : 5}}, {nombre:{$eq: "Lupita"}}]}) <p>Operador or</p></h1>
+      <h1>db.prueba2.find({$and: [{edad: {$gte : 5}}, {nombre:{$eq: "Lupita"}}]}) <p>Operador AND</p></h1>
+      <h1>db.prueba2.find({nombre: {$in:["Lupita", "Juan", "Ana"]}}) <p>Para mostrar dentro de una lista de valores  </p> </h1>
+      <h1> db.prueba2.find({nombre: /z/}) <P>que tenga Z en el nombre</P></h1>
+      <h1>db.prueba2.find({nombre: /^J/}) <p> que empiece el nombre con la letra "j"</p></h1>
+      <h1>db.prueba2.find({nombre: /a$/})<p> que termine el nombre con la letra a</p></h1>
+      <h1>$in</h1>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>
