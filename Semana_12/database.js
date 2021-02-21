@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost/crud',{
+mongoose.connect('mongodb://localhost/Crud',{
     useNewUrlParser: true,
     useFindAndModify: false,
     useUnifiedTopology: true,

@@ -4,10 +4,12 @@ const exphs = require('express-handlebars'); //tecnologia que permite inyectar c
 const session = require('express-session');// para sessiones web
 const flash = require('connect-flash'); // alertas 
 const methodOverride = require('method-override');//sobreescribe
+const passport = require('passport');
 
 const app = express();
 
 require('./database');
+require('./src/config/passport');
 
 //settings
 app.set('port', process.env.PORT || 3000);
@@ -34,7 +36,10 @@ app.use(session({
     saveUninitialized: true
 }));
 
-app.use(flash());   
+app.use(passport.initialize());
+app.use(passport.session());
+
+app.use(flash());   //iniicializa los mensajes  flash es para mensajes
 
 app.use((req, res, next)=>{
     res.locals.successMessage = req.flash('successMessage');
