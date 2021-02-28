@@ -70,10 +70,20 @@ router.post('/users/nuevo', async (req,res)=>{
 });
 
 router.post('/users/entrar', passport.authenticate('local', {
-    successRedirect: '/contenido',
+    successRedirect: '/usuarios/listaUsuarios',
     failureRedirect: '/users/entrar',
     failureFlash: true
 
 }));
+
+router.get('/usuarios/listaUsuarios', async(req, res)=>{
+    const usuarios = await  User.find().sort({date:'desc'}).lean();
+    console.log(usuarios);
+    res.render('../views/users/ListaUsuarios.hbs', {usuarios});
+
+});
+
+
+
 
 module.exports = router;
