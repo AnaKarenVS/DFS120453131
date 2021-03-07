@@ -51,6 +51,7 @@ app.use((req, res, next)=>{
 app.use(require('./src/routes/index'));
 app.use(require('./src/routes/users'));
 app.use(require('./src/routes/productos'));
+app.use(require('./src/routes/servicios'));
 //servidor
 app.listen(app.get('port'), () => {
     console.log("Servidor levantado");
