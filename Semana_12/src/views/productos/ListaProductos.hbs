@@ -48,12 +48,18 @@
                     <td>{{creado}} </td>
                     <td>{{cantidad}} </td>
                     <td>{{precio}} </td>
-                    <td><span class="material-icons">
+                    <td>
+                        <a href="/productos/editarProducto/{{_id}}">
+                            <span class="material-icons">
                             mode_edit
-                        </span></td>
-                    <td><span class="material-icons">
+                        </span>
+                        </a>
+                    </td>
+                    <td><a href="/productos/eliminarProducto/{{_id}} ">
+                        <span class="material-icons">
                             delete
-                        </span></td>
+                        </span>
+                    </a></td>
                 </tr>
                 {{else}}
                 <div class="card">
