@@ -1,0 +1,28 @@
+<div class="card">
+    <div class="card-header">
+      Empleado
+    </div>
+    <div *ngIf='edad > 25' class="alert alert-success" role="alert">
+       Asciende a: Supervisor
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">Nombre: {{nombre}}</h5>
+      <p class="card-text">Edad: {{edad}}</p>
+      <p class="card-text">Email: {{email}}</p>
+      <p class="card-text">Estatus: {{isActive()}}</p>
+    </div>
+  </div>
+  <div>
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Ventas</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let ventas of ventas">
+            <th scope="row">{{ventas}} </th>
+          </tr>
+        </tbody>
+      </table>
+  </div>

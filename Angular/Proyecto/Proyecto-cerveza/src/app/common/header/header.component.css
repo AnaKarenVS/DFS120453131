@@ -1,0 +1,13 @@
+nav{
+    list-style-type: none;
+    background-color: #ECC470;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    height: 4.5rem;
+
+  }
+
+  a{
+      color: #B6630A;
+  }

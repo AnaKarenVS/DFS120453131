@@ -1,0 +1,10 @@
+<div class="row flex-nowrap">
+<div class="card m-2"  *ngFor="let item of beers">
+    <img src={{item.imagen}} alt="..." height="250px" width="80px">
+    <div class="card-body">
+        <h5 class="card-title">{{item.nombre}} </h5>
+        <h6 class="card-subtitle">${{item.precio}} </h6>
+      <p class="card-text">{{item.descripcion}} </p>
+    </div>
+  </div>
+</div>
