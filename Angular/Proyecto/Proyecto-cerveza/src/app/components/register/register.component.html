@@ -1,15 +1,19 @@
-<form>
-  <div class="mb-3">
-    <label for="exampleInputEmail1" class="form-label">Nombre</label>
-    <input type="nombre" class="form-control" [(ngModel)]="nombre" id="email" aria-describedby="emailHelp">
+<div class="container">
+  <div class="col-sm-6">
+    <form [formGroup]="registerForm">
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Nombre</label>
+        <input type="nombre" class="form-control" formControlName="nombre" name="email" aria-describedby="emailHelp">
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Email address</label>
+        <input type="email" class="form-control" formControlName="email" name="email" aria-describedby="emailHelp">
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Password</label>
+        <input type="password" class="form-control" formControlName="password" name="password">
+      </div>
+      <button type="submit" class="btn btn-primary" (click)="registrar()" >Registrarme</button>
+    </form>
   </div>
-  <div class="mb-3">
-    <label for="exampleInputEmail1" class="form-label">Email address</label>
-    <input type="email" class="form-control" [(ngModel)]="email" id="email" aria-describedby="emailHelp">
-  </div>
-  <div class="mb-3">
-    <label for="exampleInputPassword1" class="form-label">Password</label>
-    <input type="password" class="form-control" [(ngModel)]="password" id="password">
-  </div>
-  <button type="submit" class="btn btn-primary" (click)="login()">Registrarme</button>
-</form>
+</div>

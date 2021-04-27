@@ -1,11 +1,25 @@
-<form>
-    <div class="mb-3">
-      <label for="exampleInputEmail1" class="form-label">Email address</label>
-      <input type="email" class="form-control" [(ngModel)]="email" id="email" aria-describedby="emailHelp">
-    </div>
-    <div class="mb-3">
-      <label for="exampleInputPassword1" class="form-label">Password</label>
-      <input type="password" class="form-control" [(ngModel)]="password" id="password">
-    </div>
-    <button type="submit" class="btn btn-primary" (click)="login()">Inciar Sesión</button>
-  </form>
+<div class="flex-container">
+  <div>
+  </div>
+  <div>
+    <form>
+      <mat-form-field hintLabel="Max 30 characters" appearance="fill">
+        <mat-label>Correo electronico</mat-label>
+        <input matInput #input maxlength="30" [(ngModel)]="email" name="email" >
+        <mat-hint align="end">{{input.value?.length || 0}}/30</mat-hint>
+      </mat-form-field>
+      <div class="mb-3">
+        <mat-form-field appearance="fill">
+          <mat-label>Contraseña</mat-label>
+          <input matInput [type]="hide ? 'password' : 'text'" [(ngModel)]="password" name="password">
+          <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+          <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+          </button>
+        </mat-form-field>
+      </div>
+      <button type="submit" class="btn btn-primary" (click)="login()">Inciar Sesión</button>
+    </form>
+
+  </div>
+
+  </div>

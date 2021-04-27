@@ -1,0 +1,27 @@
+<div class="container">
+    <div class="col-sm-6">
+      <form [formGroup]="cervezaForm">
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Imagen</label>
+            <input type="imagen" class="form-control" formControlName="imagen" name="email">
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Codigo</label>
+            <input type="nombre" class="form-control" formControlName="codigo" name="codigo">
+          </div>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Nombre</label>
+          <input type="nombre" class="form-control" formControlName="nombre" name="nombre">
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Precio</label>
+          <input type="precio" class="form-control" formControlName="precio" name="precio">
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">Descripción</label>
+          <input type="descripcion" class="form-control" formControlName="descripcion" name="password">
+        </div>
+        <button type="submit" class="btn btn-primary" (click)="guardar()" >Guardar</button>
+      </form>
+    </div>
+  </div>

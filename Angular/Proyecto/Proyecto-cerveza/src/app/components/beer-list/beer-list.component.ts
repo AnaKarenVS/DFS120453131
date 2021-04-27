@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { CervezaService } from 'src/app/services/cervezas.service';
+import { Router } from '@angular/router';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-beer-list',
@@ -7,9 +10,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BeerListComponent implements OnInit {
 
-  constructor() { }
+  constructor(private cervezaService : CervezaService, private modalService: NgbModal) { }
+
+  beer : Array<any>;
+  addButton: boolean = false;
+ 
 
   ngOnInit(): void {
+
+    this.cervezaService.getCervezas().subscribe(
+      response =>{
+        if(response.usuarios){
+          this.beer = response.usuarios;
+          console.log(this.beer);
+        }
+      }, 
+      error => { 
+        console.log(error);
+      });
+
+  }
+  openBackDropCustomClass(content) {
+    this.modalService.open(content, {backdropClass: 'light-blue-backdrop'});
   }
   beers = [
     {
@@ -30,6 +52,13 @@ export class BeerListComponent implements OnInit {
       nombre: 'BrewDog Golding',
       precio: 85,
       descripcion: 'Cerveza Artesanal, refrescante'
+    },
+    {
+      imagen: 'https://images.punkapi.com/v2/10.png',
+      nombre: 'BrewDog Natural',
+      precio: 105,
+      descripcion: 'Cerveza Artesanal, refrescante'
     }
+
   ]
 }

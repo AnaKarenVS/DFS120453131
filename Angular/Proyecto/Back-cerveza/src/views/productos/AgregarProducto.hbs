@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Productos</title>
+</head>
+<body>
+ 
+  <div class="container">
+    <h3>Agregar Producto</h3>
+    <div class="col-md-3">
+      <form method="post" action="/productos/agregarProductos" >
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">ID</label>
+          <input type="text" name="_id" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Nombre Producto</label>
+          <input type="text" name="nombreProducto" class="form-control" id="exampleInputEmail1"
+            aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">Descripcion</label>
+          <input type="text" name="descripcion" class="form-control" id="exampleInputPassword1">
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">Cantidad</label>
+          <input type="text" name="cantidad" class="form-control" id="exampleInputPassword1" min="0.0">
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">Precio</label>
+          <input type="text" name="precio" class="form-control" id="exampleInputPassword1" min="0.0">
+        </div>
+        <button type="submit" class="btn btn-primary">Guardar</button>
+      </form>
+    </div>
+  </div>
+</body>
+
+</html>
