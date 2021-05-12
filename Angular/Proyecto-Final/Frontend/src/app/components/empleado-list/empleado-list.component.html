@@ -1,0 +1,60 @@
+<div class="container mt-5">
+  <div class="row">
+    <button class="btn btn-lg btn-outline-primary" (click)="openAlta(contentAlta)">Agregar Empleado</button>
+  </div>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Nombre</th>
+        <th scope="col">Email</th>
+        <th scope="col">Posición</th>
+        <th scope="col">Telefono</th>
+        <th scope="col">Numero de Empleado</th>
+        <th scope="col"></th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of listaEmpleados; index as i">
+        <th scope="row">{{ item.name }}</th>
+        <td>{{ item.email }}</td>
+        <td>{{ item.position }}</td>
+        <td>{{ item.cellphone }}</td>
+        <td>{{ item.numberEmpleado }}</td>
+        <td>
+          <button class="btn btn-success" [routerLink]="['/edit-empleado', item._id]">
+            Modificar
+          </button>
+        </td>
+        <td>
+          <button class="btn btn-danger"  (click)="deleteEmpleado(item, index)">
+            Eliminar
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+    <ng-template #content let-c="close" let-d="dismiss">
+      <div class="modal-header">
+        <h4 class="modal-title" id="modal-basic-title">Actualizar Empleado</h4>
+        <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <app-empleado-edit></app-empleado-edit>
+      </div>
+    </ng-template>
+    <ng-template #contentAlta let-c="close" let-d="dismiss">
+      <div class="modal-header">
+        <h4 class="modal-title" id="modal-basic-title">Agregar Empleado</h4>
+        <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <app-empleado-create (modal)="contentAlta('Close')" ></app-empleado-create>
+      </div>
+    </ng-template>
+  

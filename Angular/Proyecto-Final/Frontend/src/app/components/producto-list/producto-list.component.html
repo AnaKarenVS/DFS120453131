@@ -1,0 +1,38 @@
+<div class="container mt-5">
+    <div class="row">
+        <button class="btn btn-lg btn-outline-primary" (click)="openAgregar(contentAlta)">Agregar Producto</button>
+    </div>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Codigo</th>
+          <th scope="col">Nombre</th>
+          <th scope="col">Descripción</th>
+          <th scope="col">Precio</th>
+          <th scope="col"></th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of listaProductos; index as i">
+          <th scope="row">{{ item.codigo }}</th>
+          <td>{{ item.nombre }}</td>
+          <td>{{ item.descripcion }}</td>
+          <td>{{ item.precio}}</td>
+          <td> <button class="btn btn-success" [routerLink]="['/edit-producto', item._id]">Modificar</button> </td>
+          <td><button class="btn btn-danger" (click)="deleteProducto(item, index)">Eliminar</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+      <ng-template #contentAlta let-c="close" let-d="dismiss">
+        <div class="modal-header">
+          <h4 class="modal-title" id="modal-basic-title">Agregar Producto</h4>
+          <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <app-producto-create></app-producto-create>
+        </div>
+      </ng-template>

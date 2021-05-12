@@ -1,0 +1,34 @@
+<form [formGroup]="nuevoProducto" (ngSubmit)="altaProducto()">
+  <div class="form-group">
+    <label for="inputName">*Codigo</label>
+    <input class="form-control" type="text" formControlName="codigo" />
+    <div *ngIf="nuevoProducto.get('codigo').invalid && (nuevoProducto.get('codigo').dirty)"
+    class="alert alert-danger"><small>Ingresa codigo</small>
+  </div>
+  </div>
+  <div class="form-group">
+    <label for="inputName">*Nombre</label>
+    <input class="form-control" type="text" formControlName="nombre" />
+    <div *ngIf="nuevoProducto.get('nombre').invalid && (nuevoProducto.get('nombre').dirty)"
+    class="alert alert-danger">Ingresa nombre del producto
+  </div>
+  </div>
+  <div class="form-group">
+    <label for="inputEmail3">*Precio</label>
+    <input class="form-control" type="text" formControlName="precio" />
+    <div *ngIf="nuevoProducto.get('precio').invalid && (nuevoProducto.get('precio').dirty)"
+    class="alert alert-danger">Ingresa precio
+  </div>
+  </div>
+  <div class="form-group">
+    <label for="inputEmail3">Descripcion</label>
+    <input class="form-control" type="text" formControlName="descripcion" />
+    <!-- error -->
+    <div class="invalid-feedback">Ingresa la descripcion</div>
+  </div>
+  <div class="form-group mt-5">
+    <button class="btn btn-success btn-lg btn-block" type="submit">
+      Guardar
+    </button>
+  </div>
+</form>

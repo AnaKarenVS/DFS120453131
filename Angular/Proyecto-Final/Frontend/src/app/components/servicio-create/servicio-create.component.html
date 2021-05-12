@@ -1,0 +1,25 @@
+<form [formGroup]="nuevoServicio" (ngSubmit)="altaServicio()">
+  <div class="form-group">
+    <label for="inputName">Nombre</label>
+    <input class="form-control" type="text" formControlName="nombre" />
+    <div *ngIf="nuevoServicio.get('nombre').invalid && (nuevoServicio.get('nombre').dirty)"
+    class="alert alert-danger"><small>*Ingresa nombre del servicio</small>
+  </div>
+  </div>
+  <div class="form-group">
+    <label for="inputEmail3">*Precio</label>
+    <input class="form-control" type="text" formControlName="costo" />
+    <div *ngIf="nuevoServicio.get('costo').invalid && (nuevoServicio.get('costo').dirty)"
+    class="alert alert-danger"><small>Ingresa el precio</small>
+  </div>
+</div>
+  <div class="form-group">
+    <label for="inputName">Descripción</label>
+    <input class="form-control" type="text" formControlName="descripcion" />
+  </div>
+  <div class="form-group mt-5">
+    <button class="btn btn-success btn-lg btn-block" type="submit">
+      Guardar
+    </button>
+  </div>
+</form>

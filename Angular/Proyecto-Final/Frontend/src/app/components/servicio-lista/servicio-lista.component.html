@@ -1,0 +1,47 @@
+<div class="container mt-5">
+    <div class="row">
+        <button class="btn btn-lg btn-outline-primary" (click)="openAlta(contentAlta)">Agregar Servicio</button>
+    </div>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Nombre</th>
+          <th scope="col">Descripción</th>
+          <th scope="col">Precio</th>
+          <th scope="col"></th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of listaServicios; index as i">
+          <td scope="row">{{ item.nombre }}</td>
+          <td>{{ item.descripcion }}</td>
+          <td>{{ item.costo}}</td>
+          <td><button class="btn btn-success" [routerLink]="['/edit-servicio', item._id]">Modificar</button> </td>
+          <td><button class="btn btn-danger" (click)="deleteServicio(item, index)">Eliminar</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+    <ng-template #content let-c="close" let-d="dismiss">
+        <div class="modal-header">
+          <h4 class="modal-title" id="modal-basic-title">Actualizar Empleado</h4>
+          <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <app-servicio-edit></app-servicio-edit>
+        </div>
+      </ng-template>
+      <ng-template #contentAlta let-c="close" let-d="dismiss">
+        <div class="modal-header">
+          <h4 class="modal-title" id="modal-basic-title">Agregar Servicio</h4>
+          <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <app-servicio-create></app-servicio-create>
+        </div>
+      </ng-template>

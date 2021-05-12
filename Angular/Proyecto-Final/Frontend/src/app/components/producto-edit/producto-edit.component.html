@@ -1,0 +1,36 @@
+<div class="container mt-5">
+    <div class="col-md-6 offset-md-3">
+        <form [formGroup]="editProducto" (ngSubmit)="onSubmitEdit()">
+            <div class="form-group">
+              <label for="inputName">*Codigo</label>
+              <input class="form-control" type="text" formControlName="codigo" />
+              <div *ngIf="editProducto.get('codigo').invalid && (editProducto.get('codigo').dirty)"
+              class="alert alert-danger"><small>Ingresa codigo</small>
+            </div>
+            </div>
+            <div class="form-group">
+              <label for="inputName">*Nombre</label>
+              <input class="form-control" type="text" formControlName="nombre" />
+              <div *ngIf="editProducto.get('nombre').invalid && (editProducto.get('nombre').dirty)"
+              class="alert alert-danger">Ingresa nombre del producto
+            </div>
+            </div>
+            <div class="form-group">
+              <label for="inputEmail3">*Precio</label>
+              <input class="form-control" type="text" formControlName="precio" />
+              <div *ngIf="editProducto.get('precio').invalid && (editProducto.get('precio').dirty)"
+              class="alert alert-danger">Ingresa precio
+            </div>
+            </div>
+            <div class="form-group">
+              <label for="inputEmail3">Descripcion</label>
+              <input class="form-control" type="text" formControlName="descripcion" />
+            </div>
+            <div class="form-group mt-5">
+              <button class="btn btn-success btn-lg btn-block" type="submit">
+                Guardar
+              </button>
+            </div>
+          </form>
+    </div>
+</div>

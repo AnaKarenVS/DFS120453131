@@ -1,0 +1,51 @@
+<div class="container mt-5">
+  <div class="col-md-6 offset-md-3">
+    <form [formGroup]="editEmpleado" (ngSubmit)="onSubmitEdit()">
+      <div class="form-group">
+        <label for="inputName">Nombre</label>
+        <input class="form-control" type="text" formControlName="name" />
+    
+      </div>
+      <div class="form-group">
+        <label for="inputEmail3">Email</label>
+        <input class="form-control" type="text" formControlName="email" />
+     
+      </div>
+    
+      <div class="form-group">
+        <label for="inputPassword3">Tipo</label>
+        <select
+          class="custom-select form-control"
+          (change)="EmpleadoType($any($event.target).value)"
+          formControlName="position"
+        >
+          <option value="">Seleccionar...</option>
+          <option
+            *ngFor="let EmpleadoType of EmpleadoType"
+            value="{{ EmpleadoType }}"
+          >
+            {{ EmpleadoType }}
+          </option>
+        </select>
+     
+      </div>
+      <div class="form-group">
+        <label for="inputEmail3">Numero de empleado</label>
+        <input class="form-control" type="text" formControlName="numberEmpleado" />
+    
+      </div>
+      <div class="form-group">
+        <label for="inputVerify3">Numero</label>
+        <input class="form-control" type="text" formControlName="cellphone" />
+    
+      </div>
+    
+      <div class="form-group">
+        <button class="btn btn-success btn-lg btn-block mt-4" type="submit">
+          Guardar
+        </button>
+      </div>
+    </form>
+    
+  </div>
+</div>

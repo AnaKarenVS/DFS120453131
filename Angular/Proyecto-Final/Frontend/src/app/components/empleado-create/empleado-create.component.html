@@ -1,0 +1,44 @@
+<form [formGroup]="nuevoEmpleado" (ngSubmit)="altaEmpleado()">
+  <div class="form-group">
+    <label for="inputName">Nombre</label>
+    <input class="form-control" type="text" formControlName="name" id="name">
+    <div *ngIf="nuevoEmpleado.get('name').invalid && (nuevoEmpleado.get('name').dirty)"
+    class="alert alert-danger">Ingresa nombre
+  </div>
+    </div>
+    <div class="form-group">
+      <label for="inputEmail3">Email</label>
+      <input class="form-control" type="text" formControlName="email">
+      <div *ngIf="nuevoEmpleado.get('email').invalid && (nuevoEmpleado.get('email').dirty)"
+      class="alert alert-danger">Ingresa Email
+    </div>
+    </div>
+    <div class="form-group">
+      <label for="inputPassword3">Tipo</label>
+      <select class="custom-select form-control" (change)="EmpleadoType($any($event.target).value)"
+        formControlName="position">
+        <option value="">Seleccionar...</option>
+        <option *ngFor="let EmpleadoType of EmpleadoType" value="{{EmpleadoType}}">{{EmpleadoType}}
+        </option>
+      </select>
+      <!-- error -->
+      <div *ngIf="nuevoEmpleado.get('position').invalid && (nuevoEmpleado.get('position').dirty)"
+      class="alert alert-danger">Elige posicion
+    </div>
+    </div>
+    <div class="form-group">
+      <label for="inputEmail3">Numero de empleado</label>
+      <input class="form-control" type="text" formControlName="numberEmpleado">
+      <!-- error -->
+      <div *ngIf="nuevoEmpleado.get('numberEmpleado').invalid && (nuevoEmpleado.get('numberEmpleado').dirty)"
+      class="alert alert-danger">Ingresa número de empleado.
+    </div>
+    </div>
+    <div class="form-group">
+      <label for="inputVerify3">Numero Telefonico</label>
+      <input class="form-control" type="text" formControlName="cellphone">
+    </div>
+    <div class="form-group mt-5">
+      <button class="btn btn-success btn-lg btn-block" type="submit">Guardar</button>
+    </div>
+</form>
