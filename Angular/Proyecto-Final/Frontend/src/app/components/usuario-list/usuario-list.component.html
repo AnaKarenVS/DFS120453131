@@ -3,8 +3,12 @@
     <p *ngIf="Usuario.length <= 0" class="no-data text-center">Aun no se han agregado usuarios!</p>
   
     <!-- Employee list -->
-    <table class="table table-bordered" *ngIf="Usuario.length > 0">
-      <thead class="table-success">
+    <div class="row">
+      <div class="col-md-4 offset-md-5 mb-4">
+        <button class="btn btn-lg btn-outline-info" (click)="openAlta(contentAlta)">Agregar usuario</button>
+      </div>
+    <table class="table" *ngIf="Usuario.length > 0">
+      <thead>
         <tr>
           <th scope="col">Usuario id</th>
           <th scope="col">Nombre</th>
@@ -33,3 +37,15 @@
       </tbody>
     </table>
   </div>
+
+  <ng-template #contentAlta let-c="close" let-d="dismiss">
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">Agregar Usuario</h4>
+      <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <app-usuario-create (modal)="contentAlta('Close')" ></app-usuario-create>
+    </div>
+  </ng-template>

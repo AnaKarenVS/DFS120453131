@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from 'src/app/services/api.service';
+import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 
 @Component({
@@ -12,7 +13,7 @@ export class UsuarioListComponent implements OnInit {
 
   Usuario:any = [];
 
-  constructor(private apiService: ApiService) { 
+  constructor(private apiService: ApiService, private modalService: NgbModal) { 
     this.readUser();
   }
 
@@ -30,7 +31,9 @@ export class UsuarioListComponent implements OnInit {
       )    
     }
   }
- 
+  openAlta(contentAlta){
+    this.modalService.open(contentAlta);
+  }
 
   ngOnInit(): void {
   }

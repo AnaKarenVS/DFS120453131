@@ -1,0 +1,13 @@
+.navbar {
+    background-color: purple;
+    margin-bottom: 3rem;
+    padding: 1rem;
+}
+
+a{
+    color:white;
+}
+.nav-link:hover, .nav-link:focus {
+    color:black;
+}
+
